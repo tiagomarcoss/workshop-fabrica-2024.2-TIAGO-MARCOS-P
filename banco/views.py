@@ -27,7 +27,7 @@ def get_cotacao(request):
 
         if response.status_code == 200:
             dados_api = response.json()
-            dados_api = dados_api[f'{moeda_1}{moeda_2}'] #A api externa funciona com uum dicionário dentro de outro, entao tenho que acessar chave e valor duas veses
+            dados_api = dados_api[f'{moeda_1}{moeda_2}'] #A api externa funciona com um dicionário dentro de outro, entao tenho que acessar chave e valor duas veses
             cotacao = Cotacao.objects.create(
                 moeda_1 = moeda_1,
                 moeda_2 = moeda_2,

@@ -35,4 +35,4 @@ def get_cotacao(request):
                 valor_venda = dados_api.get('bid'),
                 valor_compra = dados_api.get('ask'),
             )
-    return render(request, 'banco.html', {'form':form, 'cotacao':cotacao})
+    return render(request, 'bancoget.html', {'form':form, 'cotacao':cotacao})

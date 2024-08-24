@@ -45,3 +45,12 @@ def create_conta_bancaria(request):
         if form.is_valid():
             form.save()
     return render(request, 'banco_c-conta_bancaria.html', {'form':form})
+
+def create_user(request):
+    form = UserForm()
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+    return render(request, 'banco_c-user.html', {'form':form})

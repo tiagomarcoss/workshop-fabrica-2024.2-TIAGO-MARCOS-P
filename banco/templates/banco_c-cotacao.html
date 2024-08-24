@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Cotação</title>
+</head>
+<body>
+    <h1>Consultar Cotação de Moeda</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Consultar</button>
+    </form>
+    
+    {% if cotacao %}
+        <h2>Resultado da Cotação</h2>
+        <p><strong>Conversão:</strong> {{ cotacao.conversao }}</p>
+        <p><strong>Valor de Venda:</strong> {{ cotacao.valor_venda }}</p>
+        <p><strong>Valor de Compra:</strong> {{ cotacao.valor_compra }}</p>
+    {% elif moeda_1 and moeda_2 %}
+        <p>Não foi possível obter a cotação para {{ moeda_1 }} para {{ moeda_2 }}.</p>
+    {% endif %}
+
+</body>
+</html>

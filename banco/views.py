@@ -4,16 +4,6 @@ from .forms import *
 import requests
 # Create your views here.
 
-def create_cotacao(request):
-    form = CotacaoForm()
-    if request.method == 'POST':  
-        form = CotacaoForm(request.POST)
-
-        if form.is_valid():
-            form.save()
-    
-    return render(request, 'banco_c-cotacao.html', {'form':form})
-
 def get_cotacao(request):
     form = CotacaoForm(request.GET or None)
     moeda_1 = None

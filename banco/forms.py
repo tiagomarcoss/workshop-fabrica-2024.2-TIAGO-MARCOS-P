@@ -15,7 +15,7 @@ class ContaBancariaForm(forms.ModelForm):
     'saldo_USD',
     'saldo_EUR',
     'saldo_BTC',
-    'salgo_ARS',
+    'saldo_ARS',
     'pessoa',
 ]
         

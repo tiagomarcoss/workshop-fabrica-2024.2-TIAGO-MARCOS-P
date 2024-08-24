@@ -44,3 +44,11 @@ def create_user(request):
         if form.is_valid():
             form.save()
     return render(request, 'banco_c-user.html', {'form':form})
+
+
+def get_conta_bancaria(request, pessoa_id):
+    usuario = ContaBancaria.objects.get(pk = pessoa_id)
+
+    return render(request, 'banco_g-conta_bancaria.html', {'usuario':usuario})
+ 
+        

@@ -19,5 +19,7 @@ class ContaBancaria(models.Model):
     saldo_USD = models.FloatField(blank=True, null=True)
     saldo_EUR = models.FloatField(blank=True, null=True)
     saldo_BTC = models.FloatField(blank=True, null=True)
-    salgo_ARS = models.FloatField(blank=True, null=True)
+    saldo_ARS = models.FloatField(blank=True, null=True)
     pessoa = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+
+

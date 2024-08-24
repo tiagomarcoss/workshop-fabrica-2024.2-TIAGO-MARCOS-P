@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotação de Moedas</title>
+</head>
+<body>
+    <h1>Conta Bancária</h1>
+
+    {% if usuario %}
+        <h2>Resultado da Cotação</h2>
+
+        <p>: {{ usuario.pessoa.username }}</p>
+        <p>saldo_BLR: {{ usuario.saldo_BLR }}R$</p>
+        <p>saldo_USD: {{ usuario.saldo_USD }}$</p>
+        <p>saldo_EUR: {{ usuario.saldo_EUR }}€</p>
+        <p>saldo_BTC: {{ usuario.saldo_BTC }}$</p>
+        <p>saldo_ARS: {{ usuario.saldo_ARS }}$</p>
+        
+    {% endif %}
+</body>
+</html>

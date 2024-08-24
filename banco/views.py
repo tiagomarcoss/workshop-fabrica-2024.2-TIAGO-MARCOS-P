@@ -12,7 +12,7 @@ def create_cotacao(request):
         if form.is_valid():
             form.save()
     
-    return render(request, 'banco.html', {'form':form})
+    return render(request, 'banco_c-cotacao.html', {'form':form})
 
 def get_cotacao(request):
     form = CotacaoForm(request.GET or None)
@@ -35,4 +35,13 @@ def get_cotacao(request):
                 valor_venda = dados_api.get('bid'),
                 valor_compra = dados_api.get('ask'),
             )
-    return render(request, 'bancoget.html', {'form':form, 'cotacao':cotacao})
+    return render(request, 'banco_g-cotacao.html', {'form':form, 'cotacao':cotacao})
+
+def create_conta_bancaria(request):
+    form = ContaBancariaForm()
+    if request.method == 'POST':
+        form = ContaBancariaForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+    return render(request, 'banco_c-conta_bancaria.html', {'form':form})

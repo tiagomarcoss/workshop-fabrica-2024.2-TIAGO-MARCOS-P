@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 import requests
@@ -34,7 +34,8 @@ def create_conta_bancaria(request):
         form = ContaBancariaForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            pessoa = form.save()
+            return redirect('banco:get_conta_bancaria', pessoa_id = pessoa.pk)
     return render(request, 'banco_c-conta_bancaria.html', {'form':form})
 
 def create_user(request):
@@ -44,6 +45,7 @@ def create_user(request):
 
         if form.is_valid():
             form.save()
+            return redirect('banco:create_conta_bancaria')
     return render(request, 'banco_c-user.html', {'form':form})
 
 
@@ -55,6 +57,7 @@ def get_conta_bancaria(request, pessoa_id):
 def delete_conta_bancaria(request, pessoa_id):
     usuario = ContaBancaria.objects.get(pk = pessoa_id)
     usuario.delete()
+    return redirect('banco:create_conta_bancaria')
 
 def update_conta_bancaria(request, pessoa_id):
     usuario = ContaBancaria.objects.get(pk = pessoa_id)
@@ -64,5 +67,7 @@ def update_conta_bancaria(request, pessoa_id):
     if request.method == 'POST':
         form = ContaBancariaForm(request.POST, instance=usuario)
         if form.is_valid():
-            form.save()
+            pessoa = form.save()
+            return redirect('banco:get_conta_bancaria', pessoa_id = pessoa.pk)
+        
     return render(request, 'banco_u-conta_bancaria.html', {'form_action':form_action, 'form':ContaBancariaForm(instance=usuario) })

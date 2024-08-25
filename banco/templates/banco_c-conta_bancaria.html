@@ -8,7 +8,7 @@
 <body>
     <h1>Criação de Conta Bancária</h1>
 
-    <form method="post" action="{% url 'create_conta_bancaria' %}">
+    <form method="post" action="{{form_action}}">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Criar Conta Bancária</button>

@@ -48,12 +48,12 @@ Django:
     ```
  ## Como usar
  ```
- Ao acessar a rota inicial você vai poder criar o seu 
- usuário, após a criação poderá cadastrar a sua conta 
- bancaria, com ela feita poderá ser feito a leitura de seu 
- saldo em suas diferentes carteiras, fazer atualizações 
- nela e cancelar a sua conta bancaria. Também é possivel a
- comparação entre preco das duas moedas, colocando os nomes
+ Ao acessar a rota inicial você poderá criar o seu 
+ usuário, após a criação, poderá cadastrar a sua conta 
+ bancaria. Com a conta bancária em mãos, poderá ser feito a leitura de seu 
+ saldo em suas diferentes carteiras junto a alterção das informações 
+ nela, por fim, será possivel deletar a sua conta bancaria. Também é possivel a
+ comparação entre preço de duas moedas, colocando os nomes
  dela em cada campo (ex: BRL - USD) 
 
 Todos as rotas terão botões de redirecionamento para 

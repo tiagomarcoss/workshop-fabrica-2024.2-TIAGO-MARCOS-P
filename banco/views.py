@@ -51,4 +51,6 @@ def get_conta_bancaria(request, pessoa_id):
 
     return render(request, 'banco_g-conta_bancaria.html', {'usuario':usuario})
  
-        
+def delete_conta_bancaria(request, pessoa_id):
+    usuario = ContaBancaria.objects.get(pk = pessoa_id)
+    usuario.delete()

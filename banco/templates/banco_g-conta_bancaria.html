@@ -18,6 +18,12 @@
         <p>saldo_BTC: {{ usuario.saldo_BTC }}$</p>
         <p>saldo_ARS: {{ usuario.saldo_ARS }}$</p>
         
+        <a href="{% url 'banco:delete_conta_bancaria' usuario.id %}">
+            <div>DELETAR</div>
+        </a>
+        <a href="{% url 'banco:update_conta_bancaria' usuario.id %}">
+            <div>TROCAR DADOS</div>
+        </a>
     {% endif %}
 </body>
 </html>

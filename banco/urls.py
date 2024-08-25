@@ -8,4 +8,5 @@ urlpatterns = [
     path('g-conta_bancaria/<int:pessoa_id>/', get_conta_bancaria, name = 'get_conta_bancaria'),
     path('d-conta_bancaria/<int:pessoa_id>/', delete_conta_bancaria, name = 'delete_conta_bancaria'),
     path('u-conta_bancaria/<int:pessoa_id>/', update_conta_bancaria, name = 'update_conta_bancaria'),
+    path('',pagina_inicial, name= 'pagina_inicial')
 ]

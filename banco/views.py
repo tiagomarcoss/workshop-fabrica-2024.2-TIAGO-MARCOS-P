@@ -57,7 +57,7 @@ def get_conta_bancaria(request, pessoa_id):
 def delete_conta_bancaria(request, pessoa_id):
     usuario = ContaBancaria.objects.get(pk = pessoa_id)
     usuario.delete()
-    return redirect('banco:create_conta_bancaria')
+    return redirect('banco:pagina_inicial')
 
 def update_conta_bancaria(request, pessoa_id):
     usuario = ContaBancaria.objects.get(pk = pessoa_id)
@@ -71,3 +71,6 @@ def update_conta_bancaria(request, pessoa_id):
             return redirect('banco:get_conta_bancaria', pessoa_id = pessoa.pk)
         
     return render(request, 'banco_u-conta_bancaria.html', {'form_action':form_action, 'form':ContaBancariaForm(instance=usuario) })
+
+def pagina_inicial(request):
+    return render(request, 'pagina_inicial.html',)

@@ -50,9 +50,11 @@ def create_user(request):
 
 
 def get_conta_bancaria(request, pessoa_id):
-    usuario = ContaBancaria.objects.get(pk = pessoa_id)
-
-    return render(request, 'banco_g-conta_bancaria.html', {'usuario':usuario})
+    try:
+        usuario = ContaBancaria.objects.get(pk = pessoa_id)
+        return render(request, 'banco_g-conta_bancaria.html', {'usuario':usuario})
+    except ContaBancaria.DoesNotExist:
+        return redirect('banco:create_conta_bancaria')
  
 def delete_conta_bancaria(request, pessoa_id):
     usuario = ContaBancaria.objects.get(pk = pessoa_id)

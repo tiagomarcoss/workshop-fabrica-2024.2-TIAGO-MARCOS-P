@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Conta Bancária</title>
+</head>
+<body>
+    <h1>Criação de Conta Bancária</h1>
+
+    <form method="post" action="{{form_action}}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Criar Conta Bancária</button>
+    </form>
+</body>
+</html>

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 import requests
+from django.urls import reverse
 # Create your views here.
 
 def get_cotacao(request):
@@ -54,3 +55,14 @@ def get_conta_bancaria(request, pessoa_id):
 def delete_conta_bancaria(request, pessoa_id):
     usuario = ContaBancaria.objects.get(pk = pessoa_id)
     usuario.delete()
+
+def update_conta_bancaria(request, pessoa_id):
+    usuario = ContaBancaria.objects.get(pk = pessoa_id)
+    form_action = reverse('banco:update_conta_bancaria', args=(pessoa_id,))
+
+    form = ContaBancariaForm()
+    if request.method == 'POST':
+        form = ContaBancariaForm(request.POST, instance=usuario)
+        if form.is_valid():
+            form.save()
+    return render(request, 'banco_u-conta_bancaria.html', {'form_action':form_action, 'form':ContaBancariaForm(instance=usuario) })

@@ -52,7 +52,10 @@ Django:
  usuário, após a criação poderá cadastrar a sua conta 
  bancaria, com ela feita poderá ser feito a leitura de seu 
  saldo em suas diferentes carteiras, fazer atualizações 
- nela e cancelar a sua conta bancaria. 
- Todos as rotas terão botões de redirecionamento para 
+ nela e cancelar a sua conta bancaria. Também é possivel a
+ comparação entre preco das duas moedas, colocando os nomes
+ dela em cada campo (ex: BRL - USD) 
+
+Todos as rotas terão botões de redirecionamento para 
  as etapas sequenciais.
  ```

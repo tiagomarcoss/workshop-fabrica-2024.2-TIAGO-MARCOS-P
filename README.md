@@ -6,7 +6,7 @@ câmbio.
  ## Instalação
  1. Clone o repositório para sua máquina local:
     ```bash
-    git clone https://github.com/seu-usuario/meu
+    git clone https://github.com/tiagomarcoss/workshop-fabrica-2024.2-TIAGO-MARCOS-P
 projeto-django.git
     cd meu-projeto-django
     ```
@@ -48,11 +48,11 @@ Django:
     ```
  ## Como usar
  ```
-Ao acessar a rota inicial você vai poder criar o seu 
-usuário, após a criação poderá cadastrar a sua conta 
-bancaria, com ela feita poderá ser feito a leitura de seu 
-saldo em suas diferentes carteiras, fazer atualizações 
-nela e cancelar a sua conta bancaria. 
-Todos as rotas terão botões de redirecionamento para 
-as etapas sequenciais.
+ Ao acessar a rota inicial você vai poder criar o seu 
+ usuário, após a criação poderá cadastrar a sua conta 
+ bancaria, com ela feita poderá ser feito a leitura de seu 
+ saldo em suas diferentes carteiras, fazer atualizações 
+ nela e cancelar a sua conta bancaria. 
+ Todos as rotas terão botões de redirecionamento para 
+ as etapas sequenciais.
     ```

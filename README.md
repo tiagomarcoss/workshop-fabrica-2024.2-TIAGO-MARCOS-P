@@ -47,7 +47,8 @@ Django:
     python manage.py runserver
     ```
  ## Como usar
- ```Ao acessar a rota inicial você vai poder criar o seu 
+ ```
+Ao acessar a rota inicial você vai poder criar o seu 
 usuário, após a criação poderá cadastrar a sua conta 
 bancaria, com ela feita poderá ser feito a leitura de seu 
 saldo em suas diferentes carteiras, fazer atualizações 

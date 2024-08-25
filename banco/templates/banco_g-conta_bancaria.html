@@ -31,9 +31,13 @@
                                 <a href="{% url 'banco:delete_conta_bancaria' usuario.id %}" class="btn btn-danger">
                                     DELETAR
                                 </a>
+                                <a href="{% url 'banco:get_cotacao' %}" class="btn btn-outline-secondary btn-lg">
+                                    VERIFICAR COTAÇÃO DE MOEDAS
+                                </a>
                                 <a href="{% url 'banco:update_conta_bancaria' usuario.id %}" class="btn btn-warning">
                                     TROCAR DADOS
                                 </a>
+                                
                             </div>
                         {% else %}
                             <p class="text-danger">Nenhuma informação de usuário disponível.</p>

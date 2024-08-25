@@ -16,9 +16,34 @@
                         <h2>Criação de Usuário</h2>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ form_action }}">
+                        <form 
+                            action="{{ form_action }}"
+                            method="POST"
+                            enctype="multipart/form-data"
+                            class="needs-validation"
+                            novalidate
+                        >
                             {% csrf_token %}
-                            {{ form.as_p }}
+                            {% for field in form %}
+                                {% if forloop.counter != 4 %}
+                                    <div class="mb-3">
+                                        {{ field.label_tag }} 
+                                        {{ field }}
+                                        {% if field.errors %}
+                                            <div class="text-danger">
+                                                {{ field.errors }}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    {{ form.non_field_errors }}
+                                </div>
+                            {% endif %}
+                            
                             <button type="submit" class="btn btn-primary w-100">Criar Usuário</button>
                         </form>
                     </div>
@@ -29,4 +54,3 @@
 
 </body>
 </html>
-

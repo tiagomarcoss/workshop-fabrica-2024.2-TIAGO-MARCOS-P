@@ -7,14 +7,14 @@ câmbio.
  1. Clone o repositório para sua máquina local:
     ```bash
     git clone https://github.com/tiagomarcoss/workshop-fabrica-2024.2-TIAGO-MARCOS-P
-projeto-django.git
+    projeto-django.git
     cd meu-projeto-django
     ```
  2. Crie e ative um ambiente virtual:
     ```bash
     python3 -m venv venv
     source venv/bin/activate  # No Windows: 
-venv\Scripts\activate
+    venv\Scripts\activate
     ```
  3. Instale as dependências do projeto:
     ```bash
@@ -55,4 +55,4 @@ Django:
  nela e cancelar a sua conta bancaria. 
  Todos as rotas terão botões de redirecionamento para 
  as etapas sequenciais.
-    ```
+ ```
